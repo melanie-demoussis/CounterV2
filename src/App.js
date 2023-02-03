@@ -1,23 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [counter, setCounter] = useState(0);
+  const [counter1, setCounter1] = useState(0);
+  const [counter2, setCounter2] = useState(0);
+
+  // J'ai un tableau vide
+  const tab = [];
+  // Dans lequel je veux ajouter mes counter/setcounter quand j'appui sur Add.
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <div>
+          <p>"logo"</p>
+          <h1>React Counter V2</h1>
+        </div>
       </header>
+
+      <main>
+        <div>
+          <button>add</button>
+        </div>
+
+        <div className="counter">
+          <button
+            onClick={() => {
+              return setCounter(counter - 1);
+            }}
+          >
+            moins
+          </button>
+          <p>{counter}</p>
+          <button
+            onClick={() => {
+              return setCounter(counter + 1);
+            }}
+          >
+            plus
+          </button>
+        </div>
+        <div>
+          <button
+            onClick={() => {
+              return setCounter(0);
+            }}
+          >
+            Reset
+          </button>
+        </div>
+      </main>
     </div>
   );
 }
